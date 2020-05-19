@@ -39,6 +39,7 @@ public class ProductService {
                 .stream().collect(Collectors.toMap(pi -> pi.getProduct().getId(), ProductImage::getSrc));
         return products.stream().map(p ->
                 ProductTO.builder()
+                        .id(p.getId())
                     .bestseller(p.isBestseller())
                     .cena(PriceConverter.valueToPLN(p.getPrice()))
                     .kategoriaId(p.getCategory().getId())
