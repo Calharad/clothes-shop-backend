@@ -1,0 +1,1 @@
+alter table product_image rename column is_main_image to main_image;
